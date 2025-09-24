@@ -1,0 +1,102 @@
+:root{
+  --bg:#000000;
+  --accent:#ff0033;
+  --glow:#fffb00;
+  --matrix:#ff2222;
+  --text:#f5f0e6;
+  --card-bg:rgba(15,0,0,0.65);
+}
+[data-theme="cyber"]{
+  --accent:#00ffea;
+  --glow:#39ff14;
+  --matrix:#00ffaa;
+  --card-bg:rgba(0,20,15,0.6);
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;overflow:hidden;}
+body{
+  font-family:'Share Tech Mono', monospace;color:var(--text);
+  display:flex;align-items:center;justify-content:center;perspective:1000px;
+  background:radial-gradient(circle at center, #1a0000 0%, #000 100%);
+}
+
+canvas#matrix{position:fixed;inset:0;z-index:0;display:block;}
+
+.scanlines{position:fixed;inset:0;z-index:1;pointer-events:none;
+background-image:repeating-linear-gradient(180deg, rgba(255,0,0,0.04) 0, rgba(255,0,0,0.04) 1px, transparent 1px, transparent 3px);
+opacity:0.4}
+
+.grid{position:fixed;inset:0;z-index:2;pointer-events:none;
+background-image:linear-gradient(var(--glow) 1px, transparent 1px), linear-gradient(90deg, var(--glow) 1px, transparent 1px);
+background-size:100px 100px;opacity:0.05;mix-blend-mode:overlay;animation:move 20s linear infinite;}
+@keyframes move{from{background-position:0 0,0 0}to{background-position:100px 100px,100px 100px}}
+
+.card{
+  position:relative;z-index:5;
+  background:var(--card-bg);
+  border:1px solid rgba(255,0,0,0.25);
+  padding:2rem 3rem;border-radius:14px;
+  box-shadow:0 0 25px rgba(255,0,0,0.35),0 0 10px rgba(255,255,0,0.15);
+  text-align:center;max-width:680px;
+  backdrop-filter:blur(8px) saturate(140%);
+  transition:transform 0.2s ease;
+  transform-style:preserve-3d;
+}
+
+.avatar{
+  width:120px;height:120px;border-radius:50%;
+  background:url('profile.jpg') center/cover;
+  margin:0 auto 1.5rem;border:2px solid var(--accent);
+  box-shadow:0 0 25px rgba(255,0,0,0.55);
+  transition:transform 0.5s, box-shadow 0.5s;
+  transform-style:preserve-3d;
+}
+.avatar:hover{
+  transform:rotateY(15deg) rotateX(10deg) scale(1.05);
+  box-shadow:0 0 35px var(--accent),0 0 65px var(--glow);
+}
+
+h1{font-family:'Orbitron', sans-serif;font-size:2.2rem;color:var(--accent);margin-bottom:0.5rem;letter-spacing:3px;text-shadow:0 0 10px var(--accent),0 0 20px var(--accent)}
+h2{font-size:1rem;margin-bottom:1.25rem;color:var(--glow);letter-spacing:1px;text-shadow:0 0 5px var(--glow);min-height:20px}
+p{font-size:1rem;line-height:1.45;margin-bottom:1.25rem;color:rgba(245,240,230,0.95)}
+
+.btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.btn{
+  padding:.6rem 1rem;border:1px solid rgba(255,255,0,0.25);
+  border-radius:8px;color:var(--glow);font-family:'Share Tech Mono';
+  cursor:pointer;text-decoration:none;transition:0.3s ease;backdrop-filter:blur(4px);
+  position:relative;overflow:hidden;
+}
+.btn::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(120deg, transparent, var(--accent), transparent);
+  transform:translateX(-100%);
+  transition:0.5s;
+}
+.btn:hover::before{transform:translateX(100%)}
+.btn:hover{color:#fff;box-shadow:0 0 20px var(--accent)}
+
+.info-box{
+  margin-top:1rem;
+  background:rgba(0,0,0,0.35);
+  border:1px solid rgba(255,255,255,0.06);
+  padding:0.8rem 1rem;border-radius:8px;font-size:0.95rem;
+  text-align:left;max-width:560px;margin-left:auto;margin-right:auto;
+}
+
+.theme-toggle{
+  position:fixed;top:15px;right:15px;z-index:10;
+  background:var(--card-bg);color:var(--glow);
+  border:1px solid var(--accent);border-radius:6px;
+  padding:6px 12px;cursor:pointer;
+}
+
+.footer-note{
+  margin-top:0.6rem;font-size:0.8rem;color:rgba(255,255,255,0.6);text-align:center;
+}
+
+@media (max-width:640px){
+  .card{padding:1.25rem 1.4rem;margin:1rem;width:92%}
+  .avatar{width:96px;height:96px}
+}

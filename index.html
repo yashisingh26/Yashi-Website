@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Yashi Singh Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="horror-glow">
+
+  <canvas id="matrix"></canvas>
+  <div class="scanlines"></div>
+  <div class="grid"></div>
+  <button class="theme-toggle">Switch Theme</button>
+
+  <div class="card" role="main" aria-label="Profile intro">
+    <div class="avatar" aria-hidden="true"></div>
+    <h1><span>Yashi Singh</span></h1>
+    <h2 id="subtitle"></h2>
+    <p>Qualification :<strong> B.tech Computer Science</strong>, <strong>M.tech Cybersecurity</strong></p>
+    <div class="btns">
+      <a href="https://github.com/yashisingh26" target="_blank" class="btn">Github</a>
+      <a href="https://www.youtube.com/@cyberyashi25" target="_blank" class="btn">Youtube</a>
+    </div>
+
+    <div id="info" class="info-box" style="display:block;margin-top:1.25rem;">
+      <strong>Visitor Info</strong>
+      <div id="info-content" style="margin-top:0.5rem;white-space:pre-line;font-family:inherit;">
+        Fetching IP & location…
+      </div>
+    </div>
+  </div>
+
+  <!-- Background Music -->
+  <audio id="bg-music" loop>
+    <source src="audio.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
