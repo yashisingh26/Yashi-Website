@@ -100,12 +100,23 @@ function typeLoop() {
 }
 typeLoop();
 
-// ---------- BACKGROUND MUSIC (⚠️ may be blocked without click) ----------
+// ---------- BACKGROUND MUSIC: PLAY ON FIRST USER INTERACTION ----------
 const music = document.getElementById('bg-music');
 music.volume = 1.0;
-music.play().catch(err => {
-  console.log("Autoplay blocked by browser:", err);
-});
+
+function startMusicOnce() {
+  music.play().catch(err => {
+    console.log("Autoplay blocked even after click:", err);
+  });
+  // remove listener after first interaction
+  window.removeEventListener('click', startMusicOnce);
+  window.removeEventListener('touchstart', startMusicOnce);
+}
+
+// listen for first user interaction
+window.addEventListener('click', startMusicOnce, { once: true });
+window.addEventListener('touchstart', startMusicOnce, { once: true });
+
 
 // ---------- AUTO-FETCH VISITOR IP & LOCATION ----------
 const infoContent = document.getElementById('info-content');
@@ -137,3 +148,4 @@ if (document.readyState === 'loading') {
 } else {
   fetchIpInfo();
 }
+
