@@ -43,11 +43,9 @@ A personal **portfolio / profile website** with a **Cyberpunk + Matrix inspired 
    http://localhost:8080
    ```
 
-## 🔧 Customization  
+## 🔧   Webpage  
 
-- Edit `style.css` to change colors, fonts, and glow effects.  
-- Replace `audio.mp3` with your own background music.  
-- Modify `script.js` to adjust matrix speed, text effects, or visitor info API.  
+ [profile website](https://yashisingh26.github.io/Yashi-Website/)
 
 ## 👨‍💻 Author  
 
