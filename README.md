@@ -9,10 +9,7 @@ A personal **portfolio / profile website** with a **Cyberpunk + Matrix inspired 
 - 🖼️ **Profile Card** with avatar, name, qualifications & social links  
 - 🎬 **Animated Background** (Matrix canvas, scanlines, grid effect)  
 - 🎶 **Background Music Support** (`audio.mp3`)  
-- 🌍 **Visitor Info** (auto-fetches IP & Location)  
-- 🔗 Quick Links:  
-  - [GitHub](https://github.com/yashisingh26)  
-  - [YouTube](https://www.youtube.com/@cyberyashi25)  
+- 🌍 **Visitor Info** (auto-fetches IP & Location)    
 
 ## 📂 Project Structure  
 
